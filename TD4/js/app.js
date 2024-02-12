@@ -99,4 +99,28 @@ function Retirer() {
         alert('La liste de courses est vide.');
     }
 }
-   
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const bloc = document.getElementById('carre');
+
+    function animer(e) {
+        const deplacement = 10;
+        switch(e.key) {
+            case 'ArrowRight':
+                bloc.style.left = parseInt(bloc.style.left) + deplacement + 'px';
+                break;
+            case 'ArrowLeft':
+                bloc.style.left = parseInt(bloc.style.left) - deplacement + 'px';
+                break;
+            case 'ArrowUp':
+                bloc.style.top = parseInt(bloc.style.top) - deplacement + 'px';
+                break;
+            case 'ArrowDown':
+                bloc.style.top = parseInt(bloc.style.top) + deplacement + 'px';
+                break;
+        }
+    }
+
+    document.addEventListener('keydown', animer(e));
+});
